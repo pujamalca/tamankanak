@@ -1,61 +1,231 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# TK Ceria - Website Sekolah TK
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Website modern untuk Taman Kanak-kanak dengan fitur lengkap dan mudah dikustomisasi.
 
-## About Laravel
+## 🚀 Fitur Utama
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### Frontend
+- **Landing Page Modern** - Desain menarik dengan animasi dan efek visual
+- **Responsive Design** - Optimal di semua perangkat
+- **Customizable Colors** - Warna dapat diatur dari backend
+- **Blog/Artikel** - Sistem blog lengkap dengan kategori
+- **Galeri Foto** - Showcase kegiatan sekolah
+- **Formulir Pendaftaran Online** - Pendaftaran siswa baru
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Backend (Admin Panel)
+- **Dashboard Admin** - Powered by Filament
+- **Manajemen Konten** - Kelola semua konten website
+- **Manajemen Guru** - Data guru dan staff
+- **Manajemen Kelas** - Informasi kelas dan kapasitas
+- **Manajemen Siswa** - Database siswa lengkap
+- **Pendaftaran Online** - Review dan kelola pendaftaran
+- **Pengaturan Website** - Kustomisasi tampilan
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 📋 Requirements
 
-## Learning Laravel
+- PHP 8.2 atau lebih tinggi
+- Composer
+- MySQL/MariaDB
+- Node.js & NPM
+- Laravel 10.x
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## 🛠️ Instalasi
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### 1. Clone Repository
+```bash
+git clone https://github.com/yourusername/tk-website.git
+cd tk-website
+```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 2. Install Dependencies
+```bash
+composer install
+npm install
+```
 
-## Laravel Sponsors
+### 3. Setup Environment
+```bash
+cp .env.example .env
+php artisan key:generate
+```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### 4. Konfigurasi Database
+Edit file `.env` dan sesuaikan pengaturan database:
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=tk_ceria
+DB_USERNAME=root
+DB_PASSWORD=
+```
 
-### Premium Partners
+### 5. Migrasi Database
+```bash
+php artisan migrate
+php artisan db:seed
+```
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+### 6. Install Filament
+```bash
+php artisan filament:install --panels
+```
 
-## Contributing
+### 7. Build Assets
+```bash
+npm run build
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### 8. Storage Link
+```bash
+php artisan storage:link
+```
 
-## Code of Conduct
+### 9. Jalankan Server
+```bash
+php artisan serve
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Website akan berjalan di `http://localhost:8000`
 
-## Security Vulnerabilities
+## 👤 Login Admin
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+- **URL**: `http://localhost:8000/admin`
+- **Email**: admin@tkceria.sch.id
+- **Password**: password
 
-## License
+## 🎨 Kustomisasi
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### Mengubah Warna
+1. Login ke admin panel
+2. Masuk ke menu **Pengaturan**
+3. Cari pengaturan `primary_color` dan `secondary_color`
+4. Ubah nilai hex color sesuai keinginan
+
+### Mengubah Konten
+Semua konten dapat diubah melalui admin panel:
+- **Settings** - Informasi umum, kontak, sosial media
+- **Pages** - Halaman statis
+- **Blog Posts** - Artikel dan berita
+- **Gallery** - Foto kegiatan
+
+## 📁 Struktur Folder
+
+```
+tk-website/
+├── app/
+│   ├── Filament/         # Filament resources
+│   ├── Http/
+│   │   └── Controllers/  # Laravel controllers
+│   └── Models/           # Eloquent models
+├── database/
+│   ├── migrations/       # Database migrations
+│   └── seeders/         # Database seeders
+├── resources/
+│   └── views/           # Blade templates
+├── routes/
+│   └── web.php          # Web routes
+└── public/              # Public assets
+```
+
+## 🔧 Konfigurasi Tambahan
+
+### Email Configuration
+Untuk notifikasi email, konfigurasi di `.env`:
+```env
+MAIL_MAILER=smtp
+MAIL_HOST=smtp.gmail.com
+MAIL_PORT=587
+MAIL_USERNAME=your-email@gmail.com
+MAIL_PASSWORD=your-app-password
+MAIL_ENCRYPTION=tls
+```
+
+### Upload Limits
+Untuk file upload yang lebih besar, edit `php.ini`:
+```ini
+upload_max_filesize = 10M
+post_max_size = 10M
+```
+
+## 📱 Fitur Mobile
+
+Website sudah responsive dan mobile-friendly. Fitur khusus mobile:
+- Touch-friendly navigation
+- Optimized images
+- Fast loading
+- PWA ready (dapat ditambahkan)
+
+## 🔒 Keamanan
+
+- CSRF Protection
+- SQL Injection Prevention
+- XSS Protection
+- Authentication & Authorization
+- Regular security updates
+
+## 🚀 Deployment
+
+### Shared Hosting
+1. Upload semua file kecuali folder `node_modules`
+2. Set document root ke folder `public`
+3. Import database
+4. Update `.env` file
+5. Run `composer install --optimize-autoloader --no-dev`
+
+### VPS/Cloud
+1. Clone repository
+2. Install dependencies
+3. Configure web server (Nginx/Apache)
+4. Setup SSL certificate
+5. Configure supervisor untuk queue (opsional)
+
+## 📝 Maintenance
+
+### Update Dependencies
+```bash
+composer update
+npm update
+```
+
+### Clear Cache
+```bash
+php artisan cache:clear
+php artisan config:clear
+php artisan view:clear
+```
+
+### Backup Database
+```bash
+php artisan backup:run
+```
+
+## 🆘 Troubleshooting
+
+### Error 500
+- Check file permissions (storage dan bootstrap/cache harus writable)
+- Check `.env` configuration
+- Run `php artisan config:cache`
+
+### Gambar tidak muncul
+- Pastikan sudah run `php artisan storage:link`
+- Check folder permissions
+
+### Admin panel tidak bisa diakses
+- Clear cache: `php artisan filament:cache-components`
+- Check route cache: `php artisan route:clear`
+
+## 📞 Support
+
+Jika ada pertanyaan atau masalah:
+- Email: support@tkceria.sch.id
+- Documentation: [Link to docs]
+- Issues: [GitHub Issues]
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+---
+
+**Made with ❤️ for TK Ceria**
